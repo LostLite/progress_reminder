@@ -1,6 +1,5 @@
 const axios = require('axios');
-//const url = 'http://api.moringa.org/';
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const url = 'http://api.moringa.org/';
 
 //Fetch list of modules to evaluate
 const fetchModules = async () => {

@@ -9,8 +9,8 @@ app.use('/', router);
 
 //setup a cron job to run at a specified interval
 cron.schedule("0 00 * * *", () => {
-    console.log('Cron job running every minute.');
-     fetchModules();
+    console.log('Cron job running.');
+    fetchModules();
 });
 
 // this end point will display all sent out alert/reminders
