@@ -11,6 +11,11 @@ Once deployed, this application will always run at midnight. It will fetch the l
 
 If we are currently midway through the module, it proceeds to review the students' progress and sends an appropriate notification to the students communicating their statuses.
 
+# How the service is structured
+There are two main file that define this application. The "index.js" file is the entry point for the application. A cron job is set up here that determines at what frequency the service will hit the api to carry out its tasks. Rudimentary routing has also been define in case someone visits the port number where the service is running. A simple welcome message is displayed to welcome the visitor and to provide assurance that the application is up and running on the specified port.
+
+The second file that defines this application is the "sendReminders.js". The key methods defined here determine how the service operates. Once the cron job runs, it calls the "fetchModules" method which makes a get request to the api requesting a list of the currently on-going modules. For each module, it evalutes whether the module has reached the midway point. If it has, it loops through every registered student checking their progression status. Based on their progress, the service proceed to send out customised notifications to the students.
+
 ## Installation Requirements
 
 For development, you will only need Node.js and a node global package, npm, installed in your environement.
